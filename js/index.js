@@ -260,10 +260,10 @@ const feature2Img = document.querySelectorAll("#features2 .features-img");
     const tl = gsap.timeline({
         scrollTrigger: {
         trigger: features,
-        start: 'top 40%',
+        start: 'top 20%',
         //toggleActions: "play pause replay pause",
         toggleActions: "play none none reverse",
-        markers: true,
+        // markers: true,
       },
       ease: "power3.In",
     });
