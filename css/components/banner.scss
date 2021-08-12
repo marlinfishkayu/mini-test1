@@ -11,6 +11,7 @@
         top: 0;
         bottom: 0;
         height: 100%;
+        width: 100%;
     }
     .banner-bg {
         background: $pink;
@@ -154,10 +155,17 @@
         }
         .image .image-inner img{
             width: 400px;
+            right: 0;
+            left: inherit;
         }
         .image .image-inner .feature-banner.green {
             right: -24px;
         }
+        .image .image-inner .feature-banner {
+            right: -10px;
+            left: inherit;
+        }
+        
     }
 
 }

@@ -1,0 +1,82 @@
+
+
+
+#marquee {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $pink;
+}
+
+// #canvas1 {
+//     position: absolute;
+//     border: 3px solid black;
+//     width: 800px;
+//     height: 700px;
+//     transform: translate(-50%, -50%);
+//     top: 50%;
+//     left: 50%;
+
+// }
+.marquee-wrap {
+    width: var(--marquee-width);
+    height: var(--marquee-height);
+    color: $green;
+    overflow: hidden;
+    position: relative;
+    // -webkit-transform: rotate(0deg);
+    // transform: rotate(7deg);
+    .marquee-content {
+        list-style: none;
+        height: 100%;
+        display: flex;
+        animation: scrolling var(--marquee-animation-duration) linear infinite;
+        .chara {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // border: 3px solid $lBlue;
+            cursor: pointer;
+            width: var(--marquee-element-width); 
+            flex-shrink: 0;
+            font-size: calc(var(--marquee-height)*2/3);
+            white-space: nowrap;
+            img{
+              width: 100px;
+              min-height: 100px;
+              height: 100px;
+            }
+            &:nth-child(2) { 
+              animation-delay: 10s !important;
+            }
+            
+            &:hover {
+                -webkit-animation: kart_jump 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                animation: kart_jump 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+        }
+    }
+}
+
+//animation
+@keyframes scrolling {
+    0% { transform: translateX(0);}
+    100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));}
+}
+@-webkit-keyframes kart_jump { 
+  0% { -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  50% { -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  100% { -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes kart_jump { 
+  0% { -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  50% { -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  100% { -webkit-transform: translateY(0);
+    transform: translateY(0); } }

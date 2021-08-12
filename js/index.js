@@ -23,7 +23,6 @@ const featureList = document.querySelectorAll(".features-list li");
 
 //create timeline
 const bannerTL = gsap.timeline();
-// gsap.registerPlugin(ScrollTrigger);
 
 //Timeline for page loading animation [targets]
 bannerTL
@@ -32,14 +31,14 @@ bannerTL
         duration: 1.2,
         width: 0,
         skewX: 4,
-
+        opacity: 0,
         ease: "power3.inOut",
         stagger: {
           amount: 0.2
         }
     })
     .from(header, {
-      delay: -0.2,
+      delay: 0,
       y: 16,
       opacity: 0,
       duration: 0.8,
@@ -153,12 +152,12 @@ const featureTL = gsap.timeline();
     triggerHook: 0.2,
     reverse: false
   })
-  .addIndicators({
-    name: "banner fading",
-    colorTrigger: "black",
-    colorStart: "#75C695",
-    colorEnd: "pink"
-  })
+  // .addIndicators({
+  //   name: "banner fading",
+  //   colorTrigger: "black",
+  //   colorStart: "#75C695",
+  //   colorEnd: "pink"
+  // })
   .setTween(featureTL)
   .addTo(controller);
 
@@ -260,10 +259,10 @@ const feature2Img = document.querySelectorAll("#features2 .features-img");
     const tl = gsap.timeline({
         scrollTrigger: {
         trigger: features,
-        start: 'top 20%',
+        start: 'top 40%',
         //toggleActions: "play pause replay pause",
         toggleActions: "play none none reverse",
-        // markers: true,
+        markers: false,
       },
       ease: "power3.In",
     });

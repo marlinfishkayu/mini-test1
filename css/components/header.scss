@@ -72,7 +72,8 @@ header {
         font-weight: 600;
         padding: 8px 0;
         text-decoration: none;
-        
+        color: $blue;
+        opacity: 1;
         border-radius: 100px;
         @media (max-width: $widescreen) {
             margin-right: 24px;

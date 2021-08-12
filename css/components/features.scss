@@ -73,10 +73,9 @@
 
 .features2 {
     height: 100vh;
-    margin: 16px 0;
     background-color: $lPink;
     position: relative;
-   opacity: 1;
+    opacity: 1;
     
 }
 .features-img {
@@ -106,7 +105,8 @@
 
 @media (max-width: $widescreen) {
     .features {
-        .features-inner {     
+        .features-inner {    
+            flex-direction: column; 
             .feature-content {
                 width: 40%;
             }
@@ -119,7 +119,11 @@
             .features-content {
                 width: 100%;
             }
+            .features-list {
+                display: block;
+            }
         }
+        
          
     }
 }
