@@ -792,8 +792,11 @@ h1, h2 {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
+    transition: all 0.2s ease-in;
     border-radius: 16px;
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2); }
+    .flipCard .card__face:hover {
+      box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.5); }
   .flipCard .card__face--front {
     background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
     display: flex;
@@ -913,6 +916,16 @@ h1, h2 {
   top: 60%;
   -webkit-transform: rotate(-17deg);
   transform: rotate(-17deg); }
+
+.loopwrap {
+  -webkit-transition: -webkit-transform 30s linear;
+  transition: -webkit-transform 30s linear;
+  transition: transform 30s linear;
+  transition: transform 30s linear,  -webkit-transform 30s linear;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  overflow: hidden; }
 
 @keyframes scrolling {
   0% {
