@@ -29,7 +29,7 @@
     font-size: 7.5em;
     color: $white;
     position: absolute;
-    z-index: 9;
+    z-index: 0;
     text-align: center;
 }
 #btn {
@@ -44,6 +44,13 @@
     z-index: 9;
 }
 @media (max-width: $widescreen) {
+    // .parallax img {
+    //     height: auto;
+    //     bottom: 0;
+    //     top: inherit;
+    //     object-fit: scale-down;
+    // }
+
     #btn {
         font-size: 1.5em;
         transform: translateY(200px);
@@ -51,4 +58,5 @@
     #Ptext {
         font-size: 3.5em;
     }
+    
 }

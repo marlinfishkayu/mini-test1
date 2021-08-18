@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Starter</title>
-    <link
+    
+    <!-- <link
+      rel="preload"
+      crossorigin 
+      as="font/woff2"
+      type="font/woff2"
       href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Poppins:300,600&display=swap"
-      rel="stylesheet"
+    /> -->
+    <link 
+      as="style"
+      rel="stylesheet preload prefetch" 
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Poppins:300,600&display=swap" 
+      type="text/css" 
+      crossorigin="anonymous" 
     />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -83,8 +94,7 @@
         </div>
       </div>
     </section>
-    <div id="project">
-      <section id="features" class="features">
+    <section id="features" class="features">
         <div class="container">
           <div class="row">
             <div class="features-inner">
@@ -182,91 +192,66 @@
                 </div>
               </div>
               <div class="features-img">
-                <img src="images/hand.webp" alt="">
+                <img src="./images/hand.webp" alt="">
               </div>
             </div>
           </div>
         </div>
       </section>
+      
       <!-- Card Flip Animation -->
-      <section id="flipCard" class="flipCard features">
+      <section id="flipCard" class="flipCard">
         <div class="container">
           <div class="row">
+            <div class="background"></div>
             <div class="card">
-              <div class="card-inner">
-                <div class="card-face card-face-front">
-                  <h2 class="name">Product Name</h2>
-                  <a href="#" class="buy">buy now</a>
-                  <div class="circle"></div>
-                  <img src="./images/fast-delivery.svg" alt="" class="product"/>
+              <div class="card__inner" >
+                <div class="card__face card__face--front reset" value='Reset'>
+                  <h2>Card Front</h2>
                 </div>
-                <div class="card-face card-face-back">
-                  <div class="card-content">
-                    <div class="card-header">
-                      <img src="./images/fast-delivery.svg" alt="" class="pp"/>
-                      <h2>Fast Delivery</h2>
+                <div class="card__face card__face--back destroy" value='Destroy'>
+                  <div class="card__content">
+                    <div class="card__header">
+                      <img src="./images/0-fees.svg" alt="" class="pp" />
+                      <h2>Tyler Potts</h2>
                     </div>
-                    <div class="card-body">
-                        <h3>Fast Delivery</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, temporibus eius! Minima ipsa eum neque blanditiis voluptatem cupiditate repudiandae.</p>
+                    <div class="card__body">
+                      <h3>JavaScript Wizard</h3>
+                      <p>Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit. Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="card">
-              <div class="card-inner">
-                <div class="card-face card-face-front">
-                  <h2 class="name">Product Name</h2>
-                  <a href="#" class="buy">buy now</a>
-                  <div class="circle"></div>
-                  <img src="./images/chat-support.svg" alt="" class="product"/>
+              <div class="card__inner" >
+                <div class="card__face card__face--front reset" value='Reset'>
+                  <h2>Card Front</h2>
                 </div>
-                <div class="card-face card-face-back">
-                  <div class="card-content">
-                    <div class="card-header">
-                      <img src="./images/chat-support.svg" alt="" class="pp"/>
-                      <h2>Fast Delivery</h2>
+                <div class="card__face card__face--back destroy" value='Destroy'>
+                  <div class="card__content">
+                    <div class="card__header">
+                      <img src="./images/0-fees.svg" alt="" class="pp" />
+                      <h2>Tyler Potts</h2>
                     </div>
-                    <div class="card-body">
-                        <h3>Fast Delivery</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, temporibus eius! Minima ipsa eum neque blanditiis voluptatem cupiditate repudiandae.</p>
+                    <div class="card__body">
+                      <h3>JavaScript Wizard</h3>
+                      <p>Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit. Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card">
-              <div class="card-inner">
-                <div class="card-face card-face-front">
-                  <h2 class="name">Product Name</h2>
-                  <a href="#" class="buy">buy now</a>
-                  <div class="circle"></div>
-                  <img src="./images/fixed-payment-option.svg" alt="" class="product"/>
-                </div>
-                <div class="card-face card-face-back">
-                  <div class="card-content">
-                    <div class="card-header">
-                      <img src="./images/fixed-payment-option.svg" alt="" class="pp"/>
-                      <h2>Fast Delivery</h2>
-                    </div>
-                    <div class="card-body">
-                        <h3>Fast Delivery</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, temporibus eius! Minima ipsa eum neque blanditiis voluptatem cupiditate repudiandae.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-                  
           </div>
         </div>
       </section>
+
+
       <!-- marquee -->
       <section id="marquee" class="marquee">
-        <div class="marquee-wrap">
-          <ul class="marquee-content">
-            <div class="chara"><img src="./images/pixel/deer.svg" alt=""></div>
+        <div class="marquee-wrap" id="mar1">
+          <div class="marquee-content">
+            <div class="chara"><img src="./images/pixel/snowman.svg" alt=""></div>
             <div class="chara"><img src="./images/pixel/tree.svg" alt=""></div>
             <div class="chara"><img src="./images/pixel/snowman.svg" alt=""></div>
             <div class="chara"><img src="./images/pixel/santa.svg" alt=""></div>
@@ -275,106 +260,53 @@
             <div class="chara"><img src="./images/pixel/snowman.svg" alt=""></div>
             <div class="chara"><img src="./images/pixel/santa.svg" alt=""></div>
             <div class="chara"><img src="./images/pixel/santa.svg" alt=""></div>
-          </ul>
+          </div>
+        </div>
+        <div class="marquee-wrap" id="mar2">
+          <div class="marquee-content">
+            <div class="chara"><img src="./images/pixel/tree.svg" alt=""></div>
+            <div class="chara"><img src="./images/pixel/snowman.svg" alt=""></div>
+            <div class="chara"><img src="./images/pixel/santa.svg" alt=""></div>
+            <div class="chara"><img src="./images/pixel/santa.svg" alt=""></div>
+            <div class="chara"><img src="./images/pixel/snowman.svg" alt=""></div>
+            <div class="chara"><img src="./images/pixel/tree.svg" alt=""></div>
+            <div class="chara"><img src="./images/pixel/snowman.svg" alt=""></div>
+            <div class="chara"><img src="./images/pixel/santa.svg" alt=""></div>
+            <div class="chara"><img src="./images/pixel/deer.svg" alt=""></div>
+          </div>
         </div>
       </section>
+
+      <!-- loop -->
+      <div class="loopwrap">
+        
+      </div>
+
       <!-- Parallax -->
       <section id="parallax">
         <div class="parallax">
           <img src="./images/parallax/stars.png" id="stars" alt="">
           <img src="./images/parallax/moon.png" id="moon" alt="">
-    
-          <img src="./images/parallax/mountains_behind.png" id="mountains_behind" alt="">
+          <img src="./images/parallax/mountains_behind2.png" id="mountains_behind2" alt="">
           <h2 id="Ptext">Demo Text</h2>
-          
+          <img src="./images/parallax/mountains_behind1.png" id="mountains_behind1" alt="">
           <img src="./images/parallax/mountains_front.png" id="mountains_front" alt="">
         </div>
-        <!-- <div class="sec" id="sec">
-          <h2>Parallax Scrolling Effects</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nisi exercitationem minima quis asperiores necessitatibus at in. Labore nisi explicabo quidem adipisci dolores, molestiae totam ullam, neque, vel iure modi.</p>
-        </div> -->
       </section>
-    </div>
-    
-
+      <!-- script -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/CSSRulePlugin.min.js"></script>
+      <script type="text/javascript" src="js/assets/vanilla-tilt.js"></script>
+      <script src="./js/assets/lax.min.js" defer></script>
+      <script src="./js/animation-card.js" defer></script>
+      <script src="./js/animation-marquee.js" defer></script>
+      <script src="./js/animation-parallax.js" defer></script>
+      <script src="./js/index.js" defer></script>
   </body>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/CSSRulePlugin.min.js"></script>
-  <script src="js/assets/vanilla-tilt.min.js" ></script>
-  <script>
-    VanillaTilt.init(document.querySelectorAll(".card"), {
-      max: 15,
-      speed: 400
-    });
-    //It also supports NodeList
-	VanillaTilt.init(document.querySelectorAll(".card"));
-  </script>
-  <script src="js/assets/lax.min.js" defer></script>
-  <script>
-    window.scrollTo(0, 0)
-     window.onload = function () {
-        lax.init()
-
-        // Add a driver that we use to control our animations
-        lax.addDriver(
-          "scrollY",
-          function () {
-            return document.documentElement.scrollTop;
-          },
-          { frameStep: 1 }
-        );
-        // Add animation bindings to elements
-        lax.addElements("#Ptext", {
-          scrollY: {
-            translateX: [["elInY", "elOutY"], [0, "screenWidth-850"]]
-          }
-        });
-
-        lax.addElements('#stars', {
-          scrollY: {
-            translateX: [
-              ["elInY", "elOutY"],
-              [0, -300]
-            ],
-          }
-        });
-
-        lax.addElements('#moon', {
-          scrollY: {
-            translateY: [
-              ["elInY", "elOutY"],
-              [0, 200]
-            ],
-          }
-        });
-
-        lax.addElements('#mountains_behind', {
-          scrollY: {
-            translateY: [
-              ["elInY", "elOutY"],
-              [200, 0]
-            ],
-          }
-        });
-
-        lax.addElements('#mountains_front', {
-          scrollY: {
-            translateY: [
-              ["elInY", "elOutY"],
-              [500, -400]
-            ],
-          }
-        });
-      }
-  </script>
-  <script src="./js/animation-card.js" defer></script>
-  <script src="./js/animation-marquee.js" defer></script>
-  <script src="./js/animation-parallax.js" defer></script>
-  <script src="./js/index.js"></script>
 </html>

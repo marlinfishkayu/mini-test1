@@ -6,10 +6,67 @@ let Ptext = document.getElementById("Ptext");
 let btn = document.getElementById("btn");
 
 
-// window.addEventListener("scroll", function() {
-//     let value = window.scrollY;
-//     stars.style.left = value * 0.05 + 'px';
-//     moon.style.top = value * 0.15 + 'px';
-//     console.log(value);
-//     mountains_behind.style.top = value * -0.5 + "px";
-// })
+window.scrollTo(0, 0)
+    window.onload = function () {
+      lax.init()
+
+      // Add a driver that we use to control our animations
+      lax.addDriver(
+        "scrollY",
+        function () {
+          return document.documentElement.scrollTop;
+        },
+        { frameStep: 1 }
+      );
+      // Add animation bindings to elements
+      lax.addElements("#Ptext", {
+        scrollY: {
+          translateY: [["elInY", "elOutY"], [500, -500]]
+        }
+      });
+
+      lax.addElements('#stars', {
+        scrollY: {
+          translateX: [
+            ["elInY", "elOutY"],
+            [0, -300]
+          ],
+        }
+      });
+
+      lax.addElements('#moon', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elOutY"],
+            [0, 200]
+          ],
+        }
+      });
+
+      lax.addElements('#mountains_behind2', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elOutY"],
+            [100, 200]
+          ],
+        }
+      });
+
+      lax.addElements('#mountains_behind1', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elOutY"],
+            [600,-200]
+          ],
+        }
+      });
+
+      lax.addElements('#mountains_front', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elOutY"],
+            [800, -500]
+          ],
+        }
+      });
+    }

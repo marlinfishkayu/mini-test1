@@ -1,5 +1,16 @@
-
-
+:root {
+  --marquee-width: 100vw;
+  --marquee-height: 20vh;
+  --marquee-elements-displayed: 5;
+  --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+  --marquee-animation-duration: calc(var(--marquee-elements) * 2s);
+  @media (max-width: $tablet) {
+    :root {
+      --marquee-height: 16vh;
+      --marquee-element-displayed: 3;
+    }
+  }
+}
 
 #marquee {
     position: relative;
@@ -8,24 +19,15 @@
     justify-content: center;
     align-items: center;
     background-color: $pink;
+    overflow: hidden;
 }
-
-// #canvas1 {
-//     position: absolute;
-//     border: 3px solid black;
-//     width: 800px;
-//     height: 700px;
-//     transform: translate(-50%, -50%);
-//     top: 50%;
-//     left: 50%;
-
-// }
 .marquee-wrap {
     width: var(--marquee-width);
     height: var(--marquee-height);
     color: $green;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+      width: 120%;
     // -webkit-transform: rotate(0deg);
     // transform: rotate(7deg);
     .marquee-content {
@@ -51,20 +53,58 @@
             &:nth-child(2) { 
               animation-delay: 10s !important;
             }
-            
             &:hover {
                 -webkit-animation: kart_jump 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 animation: kart_jump 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             }
+            
         }
     }
 }
+
+#mar1 {
+  top: 30%;
+  -webkit-transform: rotate(7deg);
+    transform: rotate(7deg);
+}
+#mar2{
+  top: 60%;
+  -webkit-transform: rotate(-17deg);
+    transform: rotate(-17deg);
+}
+// .chara1 {
+//   background-image: url(/images/pixel/xmas.png);
+//   background-repeat: no-repeat;
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   width: 100px;
+//   height: 168px;
+//   background-position: -10px -10px;
+// }
+
+//loopwrap
+.loopwrap { 
+  -webkit-transition: -webkit-transform 30s linear; 
+  transition: -webkit-transform 30s linear; 
+  transition: transform 30s linear; 
+  transition: transform 30s linear, 
+  -webkit-transform 30s linear; 
+  opacity: 1; 
+  position: absolute; 
+  top: 0; 
+  overflow: hidden; 
+}
+
+
+
 
 //animation
 @keyframes scrolling {
     0% { transform: translateX(0);}
     100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));}
 }
+
 @-webkit-keyframes kart_jump { 
   0% { -webkit-transform: translateY(0);
     transform: translateY(0); }

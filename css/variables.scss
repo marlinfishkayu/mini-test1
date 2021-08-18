@@ -17,18 +17,6 @@ $white: #ffffff;
 :root {
   --primary: #fadcdc;
   --secondary: #d57868;
-  --marquee-width: 100vw;
-  --marquee-height: 20vh;
-  // --marquee-elements: 9;
-  --marquee-elements-displayed: 5;
-  --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
-  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
-  @media (max-width: $tablet) {
-    :root {
-      --marquee-height: 16vh;
-      --marquee-element-displayed: 3;
-    }
-  }
 }
 
 body {
@@ -87,5 +75,5 @@ h1, h2{
 .section {
   padding-top: 20vh;
   height: 100vh;
-  position: relative;
+  // position: relative;
 }

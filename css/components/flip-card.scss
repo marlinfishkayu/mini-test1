@@ -1,102 +1,64 @@
 .flipCard {
     background: none;
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
+    margin: 100px auto 200px;
+    z-index: 1;
+    perspective: 1000px;
     .card {
         margin: 100px auto 0;
         width: 400px;
         height: 600px;
-        perspective: 1000px;
     }
-    .card-inner {
+    .card__inner {
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.5s ease-in-out;
+        transition: transform 1s;
         transform-style: preserve-3d;
         cursor: pointer;
         position: relative;
-    }
-    .card-inner.is-flipped {
-        transform: rotateY(180deg);
-    }
-    .card-face {
+        &.is-flipped {
+            transform: rotateY(180deg);
+          }
+      }
+    .card__face {
         position: absolute;
-        height: 100%;
         width: 100%;
+        height: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         overflow: hidden;
         border-radius: 16px;
-        box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.1);
-        transition: 0.5s ease-in;
-        &:hover {
-            box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.5);
-        }
-    }
-    .card-face-front {
+        box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+      }
+    // card front
+    .card__face--front {
         background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        
-        .front-wrapper {
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-            
-            .circle {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 200px;
-                height: 200px;
-                border-radius: 50%;
-                transition: 0.5s;
-                opacity: 1;
-                background-color: $green;
-                z-index: 1;
-                transform: translateZ(50px);
-            }
-            // &:hover .circle{
-            //     opacity: 1;
-            //     transform: translateZ(20px);
-            // }
-            .name {
-                color: $white;
-                font-size: 32px;
-                transition: 0.5s;
-                z-index: 2;
-                
-            }
-            // &:hover .name {
-            //     opacity: 1;
-            //     transform: perspective(1000px);
-            //     transform: translate3d(-50%,-50%, 160px);
-            // }
-            img {
-                transition: 0.5s;
-                z-index: 2;
-            }
-        }
-        
-        
-    }
-    .card-face-back {
-        background-color: $lBlue;
+      }
+    
+    // card back
+    .card__face--back {
+        background-color: var(--light);
         transform: rotateY(180deg);
-    }
-    .card-content {
+      }
+    .card__content  {
         width: 100%;
         height: 100%;
-        color: $white;
     }
-    .card-header {
+    .card__header {
         position: relative;
         padding: 30px 30px 40px;
+        h2 {
+            color: $white;
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+        }
         &:after {
             content: "";
             display: block;
@@ -105,9 +67,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: -1;
             border-radius: 0 0 20% 0;
             background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+            z-index: -1;
+            border-radius: 0px 0px 50% 0px;
         }
         .pp {
             display: block;
@@ -118,133 +81,32 @@
             background-color: $white;
             border: 5px solid $white;
             object-fit: cover;
-    
         }
     }
-    
-    .card-header h2 {
-        color: $white;
-        font-size: 32px;
-        font-weight: 900;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .card-body {
-        padding: 30px 30px 40px;
+    .card__body {
+        padding: 30px;
         h3 {
+            color: var(--dark);
+            font-size: 24px;
             font-weight: 600;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
         }
-        p{
-            line-height: 1.8rem;
-            font-weight: 300;
+        p {
+            color: var(--dark);
+            font-size: 18px;
+            line-height: 1.4;
         }
     }
 }
 
 
-//parallax 
-.card-face-front {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    margin: 400px;
-    background-image: linear-gradient(135deg, #ff00ba 0%, #fae713 100%);
-    transform-style: preserve-3d;   
-    &:before {
-        content: "product";
-        position:  absolute;
-        top: 20px;
-        left: 20px;
-        font-size: 6em;
-        font-weight: 900;
-        color: $white;
-        font-style: italic;
-        opacity: 0;
+  
+  
+@media (max-width: $widescreen) {
+    .flipCard .container .row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-    &:after {
-        content: "product";
-        position:  absolute;
-        bottom: 20px;
-        right: 20px;
-        font-size: 6em;
-        font-weight: 900;
-        color: $white;
-        font-style: italic;
-        opacity: 0;
-        transition: 0.5s;
-    }
-    &:hover::after ,
-    &:hover::before {
-        opacity: 0.1;
-    }
-    .name {
-        position: absolute;
-        top: 0;
-        left: 0;
-        text-align: center;
-        color: $white;
-        width: 100%;
-        transform-style: preserve-3d;
-        transform: translate3d(0,0,75px);
-        transition: 0.5s;
-        opacity: 0;
-        z-index: 10;
-    }
-    .buy{
-        opacity: 0;
-    }
-    .circle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        transition: 0.5s;
-        background: $white;
-        transform-style: preserve-3d;
-        transform: translate3d(-50%, -50%, 50px);
-        opacity: 1;
-        z-index: 10;
-    }
-    .product {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        max-width: 300px;
-        transition: 0.5s;
-        z-index: 11;
-        transition: 0.5s;
-        transform-style: preserve-3d;
-        transform: translate3d(-50%, -50%, 0px) rotate(-15deg);
-    }
-
-}
-.card-face-front:hover .name {
-    top: 40px;
-    opacity: 1;
-}
-.card-face-front:hover .buy {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform-style: preserve-3d;
-    transform: translate3d(-50%,0,75px);
-    color: $white;
-    background: $blue;
-    padding: 10px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    opacity: 1;
-    transition: 0.5s;
-    z-index: 10;
-}
-.card-face-front:hover .buy {
-    bottom: 30px;
-    opacity: 1;
 }
 
-.card-face-front:hover .product {
-    transform: translate3d(-50%, -50%, 100px) rotate(45deg);
-}

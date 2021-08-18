@@ -3,6 +3,8 @@
 .banner {
     height: 80vh;
     position: relative;
+    background: $pink;
+    overflow: hidden;
     .banner-addition-bg {
         background: $blue;
         position: absolute;
